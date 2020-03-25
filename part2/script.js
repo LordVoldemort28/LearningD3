@@ -62,6 +62,17 @@ d3.tsv("state_population_gdp.tsv", type, function(error, data) {
     .attr("x", -20)
     .style("text-anchor", "start");
 
+    var ticksX = d3.select("g.x").selectAll(".tick text");
+    ticksX.attr("class", function(d,i){
+        if(d == 0){return "zeroX"}    
+    });
+
+    var xLabel = d3.select("g.x").append("g")
+                    .append("text").text("population")
+                    .attr("class", "xLabel")
+                    .attr("transform", "translate(" + width + ",-5)")
+
+
     var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left");
@@ -78,17 +89,8 @@ d3.tsv("state_population_gdp.tsv", type, function(error, data) {
         if(d == 0){return "zeroY"}
     })
 
-    var ticksX = d3.select("g.x").selectAll(".tick text");
-    ticksX.attr("class", function(d,i){
-        if(d == 0){return "zeroX"}    
-    });
 
-var xLabel = d3.select("g.x").append("g")
-                    .append("text").text("population")
-                    .attr("class", "xLabel")
-                    .attr("transform", "translate(" + width + ",-5)")
-
-var YLabel = d3.select("g.y").append("g")
+    var YLabel = d3.select("g.y").append("g")
                     .append("text").text("gdp")
                     .attr("class", "yLabel")                
 });
