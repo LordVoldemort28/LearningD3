@@ -35,7 +35,7 @@ d3.tsv("state_population_gdp.tsv", type, function(error, data) {
         .attr("r", 5)
         .attr("cy", function(d) { return y(d.gdp); })
         .on("mouseover", function(d, i){
-            var tipx = parseInt(d3.select(this).attr("cx"))+65;
+            var tipx = parseInt(d3.select(this).attr("cx"))+100;
             var tipy = parseInt(d3.select(this).attr("cy"))+45;
             tooltip.attr("x", tipx); 		
             tooltip.attr("y", tipy);
