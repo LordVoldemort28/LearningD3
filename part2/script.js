@@ -20,8 +20,6 @@ var tooltip = chart.append("text")
 	
 d3.tsv("state_population_gdp.tsv", type, function(error, data) {
 
-    console.log(data)
-
     x.domain([0, d3.max(data, function(d) { return d.population; })])
 	y.domain([0, d3.max(data, function(d) { return d.gdp; })]);
 
@@ -75,15 +73,24 @@ d3.tsv("state_population_gdp.tsv", type, function(error, data) {
     .attr("x", -55)
     .style("text-anchor", "start");
 
-var ticksY = d3.select("g.y").selectAll(".tick text");
-ticksY.attr("class", function(d,i){
-  if(d == 0){return "zeroY"}
-  })
+    var ticksY = d3.select("g.y").selectAll(".tick text");
+    ticksY.attr("class", function(d,i){
+        if(d == 0){return "zeroY"}
+    })
 
-var ticksX = d3.select("g.x").selectAll(".tick text");
-ticksX.attr("class", function(d,i){
-  if(d == 0){return "zeroX"}    
-});
+    var ticksX = d3.select("g.x").selectAll(".tick text");
+    ticksX.attr("class", function(d,i){
+        if(d == 0){return "zeroX"}    
+    });
+
+var xLabel = d3.select("g.x").append("g")
+                    .append("text").text("population")
+                    .attr("class", "xLabel")
+                    .attr("transform", "translate(" + width + ",-5)")
+
+var YLabel = d3.select("g.y").append("g")
+                    .append("text").text("gdp")
+                    .attr("class", "yLabel")                
 });
 
 function type(d) {

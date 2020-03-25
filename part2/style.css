@@ -3,9 +3,11 @@
 }
 
 .chart text { 
-    /* fill: white;  */
     font: 10px sans-serif; 
-    text-anchor: end; 
+}
+
+.chart {
+    background-color: #efefefbd;
 }
 
 .tooltip{
@@ -35,4 +37,19 @@
 
 .zeroX {
     transform: translate(16px, 0px);
+}
+
+.xLabel {
+    text-anchor: end;
+}
+
+.yLabel {
+    transform: translate(10px, 17px) rotate(-90deg) !important;
+    /* transform: ; */
+}
+
+.axiss {
+    background-color: red;
+    color: firebrick;
+    font-size: 100px;
 }
