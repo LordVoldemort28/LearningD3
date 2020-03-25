@@ -3,7 +3,7 @@
 }
 
 .chart text { 
-    fill: white; 
+    /* fill: white;  */
     font: 10px sans-serif; 
     text-anchor: end; 
 }
@@ -21,4 +21,18 @@
     background    : black;
     color         : white;
     pointer-events: none;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #4e5a64;
+    shape-rendering: crispEdges;
+    }
+
+.zeroY {
+    transform: translate(32px, 0px);
+}
+
+.zeroX {
+    transform: translate(16px, 0px);
 }
