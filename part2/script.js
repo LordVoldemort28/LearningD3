@@ -20,6 +20,7 @@ var tooltip = chart.append("text")
 	
 d3.tsv("state_population_gdp.tsv", type, function(error, data) {
 
+    console.log(typeof(data))
     x.domain([0, d3.max(data, function(d) { return d.population; })])
 	y.domain([0, d3.max(data, function(d) { return d.gdp; })]);
 
