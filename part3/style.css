@@ -1,5 +1,8 @@
 .chart rect { 
-    fill: turquoise, pink; 
+    fill: turquoise; 
+    stroke-width: 1px;
+    stroke: #ffffff9c;;
+    shape-rendering: crispEdges;
 }
 
 .chart text { 
