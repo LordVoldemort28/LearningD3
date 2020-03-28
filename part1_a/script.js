@@ -24,7 +24,6 @@ var tooltip = d3.tip()
 
 allgroup.call(tooltip);
 
-var sort = false
 
 d3.tsv("./state_population_gdp.tsv", type, function(error, data) {
 
@@ -60,13 +59,8 @@ function type(d) {
 }
 
 var sortBar = function() {
-    sort = !sort
-
     chart.selectAll("rect")
         .sort(function(a, b) {
-            if(!sort){
-                return d3.descending(a.population, b.population);
-            }
             return d3.ascending(a.population, b.population);
         })
         .transition()
