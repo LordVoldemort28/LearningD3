@@ -8,17 +8,30 @@
     text-anchor: end; 
 }
 
-.tooltip{
-    position      : absolute;
-    text-align    : center;
-    max-width     : 70px;
-    max-height    : 30px;
-    padding       : 8px;
-    border        : none;
-    border-radius : 8px;
-    margin-top    : -30px;
-    font          : 10px sans-serif;
-    background    : black;
-    color         : white;
-    pointer-events: none;
-}
+.d3-tip {
+    line-height: 1;
+    padding: 12px;
+    background: pink;
+    opacity: 0.2;
+    color: #fff;
+    border-radius: 30px;
+  }
+  
+  /* Creates a small triangle extender for the tooltip */
+  .d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    width: 100%;
+    line-height: 1;
+    color: pink;
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+  }
+  
+  /* Style northward tooltips differently */
+  .d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+  }
