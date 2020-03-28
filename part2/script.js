@@ -15,10 +15,12 @@ var chart = d3.select(".chart")
 var allgroup = chart.append("g")
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");   
 
-var tooltip = chart.append("text")
-        .style("visibility", "hidden");    
-	
-d3.tsv("state_population_gdp.tsv", type, function(error, data) {
+var tooltip = chart.append("text")        
+                    .style("text-decoration", "underline")
+                    .style("background-color", "black")
+                    .style("visibility", "hidden");  
+                    
+d3.tsv("./state_population_gdp.tsv", type, function(error, data) {
 
     console.log(typeof(data))
     x.domain([0, d3.max(data, function(d) { return d.population; })])

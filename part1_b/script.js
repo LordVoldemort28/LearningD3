@@ -23,9 +23,8 @@ var tooltip = d3.tip()
 
 allgroup.call(tooltip);
 
-var sort = false
 
-d3.tsv("../dataset/state_population_gdp.tsv", type, function(error, data) {
+d3.tsv("./state_population_gdp.tsv", type, function(error, data) {
 
     x.domain(d3.range(data.length))
 	y.domain([0, d3.max(data, function(d) { return d.gdp; })]);
